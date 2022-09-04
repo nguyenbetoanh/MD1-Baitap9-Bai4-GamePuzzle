@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        background-color: lemonchiffon;
+        margin-left: 430px;
+        margin-top: 120px;
+    }
+    h1 {
+        text-align: center;
+    }
+</style>
+<body>
+<img id="anh1" src="girl1.jpg" onclick="doiMau1()" width="700px"
+     height="150px">
+<br>
+<img id="anh2" src="anya2.jpg" onclick="doiMau2()" width="700px"
+     height="150px">
+<br>
+<img id="anh3" src="beto3.jpg" onclick="doiMau3()" width="700px"
+     height="150px">
+<h1 id="kq"></h1>
+<script>
+    let count1 = 1;
+    let count2 = 2;
+    let count3 = 3;
+    let anh1 = document.getElementById('anh1');
+    let anh2 = document.getElementById('anh2');
+    let anh3 = document.getElementById('anh3');
+
+    function doiMau1() {
+        count1++;
+        if (count1 == 2) {
+            anh1.src = 'anya1.jpg';
+        } else if (count1 == 3) {
+            anh1.src = "beto1.jpg";
+        } else {
+            anh1.src = "girl1.jpg";
+            count1 = 1;
+        }
+        xetKetQua()
+    }
+
+    function doiMau2() {
+        count2++;
+        if (count2 == 2) {
+            anh2.src = 'anya2.jpg';
+        } else if (count2 == 3) {
+            anh2.src = "beto2.jpg";
+        } else {
+            count2 = 1;
+            anh2.src = "girl2.jpg";
+        }
+        xetKetQua()
+    }
+
+    function doiMau3() {
+        count3++;
+        if (count3 == 2) {
+            anh3.src = 'anya3.jpg';
+        } else if (count3 == 3) {
+            anh3.src = "beto3.jpg";
+        } else {
+            count3 = 1;
+            anh3.src = "girl33.jpg";
+        }
+        xetKetQua()
+    }
+
+    function xetKetQua() {
+        if (count1 == count2 && count2 == count3) {
+            document.getElementById('kq').innerHTML = '<h1 style="background-color:dodgerblue ;color:red">Bạn đã chiến thắng</h1>'
+        }
+    }
+</script>
+</body>
+</html>
