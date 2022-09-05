@@ -5,18 +5,23 @@
     <title>Title</title>
 </head>
 <style>
-    body{
+    body {
         background-color: lemonchiffon;
         margin-left: 430px;
         margin-top: 120px;
     }
+
     h1 {
         text-align: center;
+    }
+
+    .color {
+
     }
 </style>
 <body>
 <img id="anh1" src="girl1.jpg" onclick="doiMau1()" width="700px"
-     height="150px">
+     height="150px" class="color">
 <br>
 <img id="anh2" src="anya2.jpg" onclick="doiMau2()" width="700px"
      height="150px">
@@ -42,6 +47,7 @@
             anh1.src = "girl1.jpg";
             count1 = 1;
         }
+        console.log(count1, 'DE Y CAI NAY')
         xetKetQua()
     }
 
@@ -73,7 +79,13 @@
 
     function xetKetQua() {
         if (count1 == count2 && count2 == count3) {
-            document.getElementById('kq').innerHTML = '<h1 style="background-color:dodgerblue ;color:red">Bạn đã chiến thắng</h1>'
+            anh1.style.boxShadow = 'red 4px 4px 9px '
+            anh2.style.boxShadow = 'red 4px 4px 9px '
+            anh3.style.boxShadow = 'red 4px 4px 9px '
+        } else {
+            anh1.style.boxShadow = 'blue 4px 4px 9px '
+            anh2.style.boxShadow = 'blue 4px 4px 9px '
+            anh3.style.boxShadow = 'blue 4px 4px 9px '
         }
     }
 </script>
